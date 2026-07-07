@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Juicer Babe — Organic. Kosher. Eco-Friendly. Coming Soon.</title>
+<style>
+  :root{
+    --green-dark:#2e5e3b;
+    --green:#4c8a5e;
+    --green-light:#eaf3ec;
+    --cream:#fdfbf6;
+    --charcoal:#26291f;
+    --accent:#e7b64c;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Segoe UI', Helvetica, Arial, sans-serif;
+    background:var(--cream);
+    color:var(--charcoal);
+    line-height:1.6;
+  }
+  header{
+    text-align:center;
+    padding:70px 20px 40px;
+  }
+  .logo{
+    font-family:Georgia, 'Times New Roman', serif;
+    font-size:2.6rem;
+    color:var(--green-dark);
+    letter-spacing:1px;
+  }
+  .logo span{color:var(--accent);}
+  .tagline{
+    margin-top:10px;
+    font-size:1.05rem;
+    color:#555;
+    text-transform:uppercase;
+    letter-spacing:3px;
+  }
+  .hero{
+    max-width:720px;
+    margin:0 auto;
+    text-align:center;
+    padding:20px 24px 60px;
+  }
+  .hero h1{
+    font-size:2rem;
+    color:var(--green-dark);
+    margin-bottom:16px;
+    font-family:Georgia, serif;
+  }
+  .hero p{
+    font-size:1.05rem;
+    color:#444;
+    margin-bottom:30px;
+  }
+  .badges{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    flex-wrap:wrap;
+    margin-bottom:36px;
+  }
+  .badge{
+    background:var(--green-light);
+    color:var(--green-dark);
+    padding:8px 18px;
+    border-radius:30px;
+    font-size:0.85rem;
+    font-weight:600;
+    letter-spacing:0.5px;
+  }
+  form.signup{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:14px;
+  }
+  form.signup input[type="email"]{
+    padding:14px 18px;
+    border:1px solid #cfd8ce;
+    border-radius:6px;
+    font-size:1rem;
+    width:280px;
+    max-width:100%;
+  }
+  form.signup button{
+    padding:14px 26px;
+    background:var(--green-dark);
+    color:#fff;
+    border:none;
+    border-radius:6px;
+    font-size:1rem;
+    font-weight:600;
+    cursor:pointer;
+    transition:background 0.2s ease;
+  }
+  form.signup button:hover{background:var(--green);}
+  .fine-print{
+    font-size:0.8rem;
+    color:#888;
+  }
+  .divider{
+    width:60px;
+    height:3px;
+    background:var(--accent);
+    margin:0 auto 50px;
+  }
+  section.categories{
+    max-width:960px;
+    margin:0 auto;
+    padding:0 24px 70px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+    gap:24px;
+  }
+  .card{
+    background:#fff;
+    border:1px solid #eee;
+    border-radius:12px;
+    padding:30px 22px;
+    text-align:center;
+    box-shadow:0 2px 10px rgba(0,0,0,0.03);
+  }
+  .card .icon{font-size:2rem;margin-bottom:12px;}
+  .card h3{
+    color:var(--green-dark);
+    margin-bottom:10px;
+    font-size:1.1rem;
+  }
+  .card p{font-size:0.92rem;color:#666;}
+  footer{
+    text-align:center;
+    padding:30px 20px 50px;
+    font-size:0.85rem;
+    color:#999;
+  }
+  footer a{color:var(--green-dark);text-decoration:none;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Juicer <span>Babe</span></div>
+  <div class="tagline">Organic &middot; Kosher &middot; Eco-Friendly &middot; Merch</div>
+</header>
+
+<div class="hero">
+  <h1>Clean living, curated for you.</h1>
+  <p>Juicer Babe is opening soon — a shop built around organic and kosher food, eco-friendly everyday products, and merch made for people who care what goes in and around their lives. Be first to know when we launch.</p>
+
+  <div class="badges">
+    <span class="badge">Certified Organic Picks</span>
+    <span class="badge">Certified Kosher Picks</span>
+    <span class="badge">Eco-Safe Products</span>
+    <span class="badge">Original Merch</span>
+  </div>
+
+  <form class="signup" onsubmit="return handleSignup(event)">
+    <input type="email" id="emailInput" placeholder="you@email.com" required>
+    <button type="submit">Notify Me</button>
+  </form>
+  <p class="fine-print" id="formNote">Get 10% off your first order when we launch. No spam, just clean living.</p>
+</div>
+
+<div class="divider"></div>
+
+<section class="categories">
+  <div class="card">
+    <div class="icon">🥑</div>
+    <h3>Organic Pantry</h3>
+    <p>Shelf-stable, certified organic staples sourced straight from the label — no guesswork, no additives.</p>
+  </div>
+  <div class="card">
+    <div class="icon">✡️</div>
+    <h3>Certified Kosher</h3>
+    <p>Trusted kosher-certified products, clearly marked with the certification you can see on the packaging.</p>
+  </div>
+  <div class="card">
+    <div class="icon">🌿</div>
+    <h3>Eco-Friendly Living</h3>
+    <p>Safe, sustainable swaps for everyday items — better for your home, better for the planet.</p>
+  </div>
+  <div class="card">
+    <div class="icon">👕</div>
+    <h3>Juicer Babe Merch</h3>
+    <p>Original apparel and accessories for the clean-living community. New drops coming soon.</p>
+  </div>
+</section>
+
+<footer>
+  Los Angeles, CA &nbsp;|&nbsp; &copy; 2026 Juicer Babe &nbsp;|&nbsp; <a href="mailto:juicerbabe@icloud.com">juicerbabe@icloud.com</a>
+</footer>
+
+<script>
+  function handleSignup(e){
+    e.preventDefault();
+    const email = document.getElementById('emailInput').value;
+    const note = document.getElementById('formNote');
+    note.textContent = "You're on the list, " + email + " — we'll email you the second we launch.";
+    note.style.color = '#2e5e3b';
+    note.style.fontWeight = '600';
+    document.getElementById('emailInput').value = '';
+    return false;
+  }
+</script>
+
+</body>
+</html>
