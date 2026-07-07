@@ -3,195 +3,311 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Juicer Babe — Organic. Kosher. Eco-Friendly. Coming Soon.</title>
+<title>Juicer Babe — Organic. Kosher. Eco-Friendly.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --green-dark:#2e5e3b;
-    --green:#4c8a5e;
-    --green-light:#eaf3ec;
-    --cream:#fdfbf6;
-    --charcoal:#26291f;
-    --accent:#e7b64c;
+    --forest:#1f3a2a;
+    --forest-deep:#16281c;
+    --sage:#6b8a72;
+    --sage-pale:#eef2ec;
+    --gold:#b8934f;
+    --cream:#faf8f3;
+    --ink:#22241f;
+    --ink-soft:#5b5d55;
+    --line:#e2ddd0;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
   body{
-    font-family:'Segoe UI', Helvetica, Arial, sans-serif;
+    font-family:'Jost', Helvetica, Arial, sans-serif;
     background:var(--cream);
-    color:var(--charcoal);
-    line-height:1.6;
+    color:var(--ink);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
   }
-  header{
-    text-align:center;
-    padding:70px 20px 40px;
+  .serif{font-family:'Cormorant Garamond', Georgia, serif;}
+
+  /* Top hairline nav */
+  nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:28px 48px;
+    max-width:1180px;
+    margin:0 auto;
   }
-  .logo{
-    font-family:Georgia, 'Times New Roman', serif;
-    font-size:2.6rem;
-    color:var(--green-dark);
-    letter-spacing:1px;
+  nav .mark{
+    font-family:'Cormorant Garamond', serif;
+    font-size:1.3rem;
+    letter-spacing:2px;
+    color:var(--forest);
   }
-  .logo span{color:var(--accent);}
-  .tagline{
-    margin-top:10px;
-    font-size:1.05rem;
-    color:#555;
+  nav .mark em{
+    font-style:normal;
+    color:var(--gold);
+  }
+  nav .status{
+    font-size:0.7rem;
+    letter-spacing:2.5px;
     text-transform:uppercase;
-    letter-spacing:3px;
+    color:var(--ink-soft);
+    border:1px solid var(--line);
+    padding:7px 16px;
+    border-radius:2px;
   }
-  .hero{
-    max-width:720px;
+
+  /* Hero */
+  header.hero{
+    max-width:760px;
     margin:0 auto;
     text-align:center;
-    padding:20px 24px 60px;
+    padding:64px 32px 56px;
   }
-  .hero h1{
-    font-size:2rem;
-    color:var(--green-dark);
-    margin-bottom:16px;
-    font-family:Georgia, serif;
+  .eyebrow{
+    font-size:0.72rem;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:500;
+    margin-bottom:22px;
   }
-  .hero p{
-    font-size:1.05rem;
-    color:#444;
-    margin-bottom:30px;
+  header.hero h1{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:500;
+    font-size:3.4rem;
+    line-height:1.15;
+    color:var(--forest-deep);
+    margin-bottom:26px;
+    letter-spacing:0.3px;
   }
-  .badges{
+  header.hero h1 .accent{
+    font-style:italic;
+    color:var(--gold);
+  }
+  header.hero p.lede{
+    font-size:1.08rem;
+    color:var(--ink-soft);
+    max-width:520px;
+    margin:0 auto 40px;
+    font-weight:300;
+  }
+
+  .rule{
+    width:44px;
+    height:1px;
+    background:var(--gold);
+    margin:0 auto 40px;
+  }
+
+  /* Pillars row */
+  .pillars{
     display:flex;
     justify-content:center;
     gap:14px;
     flex-wrap:wrap;
-    margin-bottom:36px;
+    margin-bottom:48px;
   }
-  .badge{
-    background:var(--green-light);
-    color:var(--green-dark);
-    padding:8px 18px;
-    border-radius:30px;
-    font-size:0.85rem;
-    font-weight:600;
-    letter-spacing:0.5px;
+  .pillar{
+    font-size:0.72rem;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:var(--forest);
+    border:1px solid var(--line);
+    padding:9px 20px;
+    border-radius:2px;
+    font-weight:500;
+    background:transparent;
+    transition:border-color .2s ease, color .2s ease;
   }
+
+  /* Signup */
   form.signup{
     display:flex;
     justify-content:center;
-    gap:10px;
-    flex-wrap:wrap;
-    margin-bottom:14px;
+    gap:0;
+    max-width:440px;
+    margin:0 auto 16px;
+    border-bottom:1.5px solid var(--forest);
   }
   form.signup input[type="email"]{
-    padding:14px 18px;
-    border:1px solid #cfd8ce;
-    border-radius:6px;
-    font-size:1rem;
-    width:280px;
-    max-width:100%;
-  }
-  form.signup button{
-    padding:14px 26px;
-    background:var(--green-dark);
-    color:#fff;
+    flex:1;
+    padding:14px 6px;
     border:none;
-    border-radius:6px;
-    font-size:1rem;
+    background:transparent;
+    font-family:'Jost', sans-serif;
+    font-size:0.95rem;
+    color:var(--ink);
+    outline:none;
+  }
+  form.signup input::placeholder{color:#9a9a90;}
+  form.signup button{
+    padding:14px 4px;
+    background:transparent;
+    color:var(--forest);
+    border:none;
+    font-size:0.78rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
     font-weight:600;
     cursor:pointer;
-    transition:background 0.2s ease;
+    white-space:nowrap;
   }
-  form.signup button:hover{background:var(--green);}
+  form.signup button:hover{color:var(--gold);}
   .fine-print{
-    font-size:0.8rem;
-    color:#888;
+    font-size:0.78rem;
+    color:#948f80;
+    letter-spacing:0.3px;
   }
-  .divider{
-    width:60px;
-    height:3px;
-    background:var(--accent);
-    margin:0 auto 50px;
-  }
+
+  /* Categories */
   section.categories{
-    max-width:960px;
+    max-width:1080px;
     margin:0 auto;
-    padding:0 24px 70px;
+    padding:20px 32px 100px;
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
-    gap:24px;
+    grid-template-columns:repeat(4, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
   }
   .card{
-    background:#fff;
-    border:1px solid #eee;
-    border-radius:12px;
-    padding:30px 22px;
+    background:var(--cream);
+    padding:46px 28px;
     text-align:center;
-    box-shadow:0 2px 10px rgba(0,0,0,0.03);
   }
-  .card .icon{font-size:2rem;margin-bottom:12px;}
+  .card .icon{
+    width:34px;
+    height:34px;
+    margin:0 auto 22px;
+    color:var(--forest);
+  }
+  .card .icon svg{width:100%;height:100%;}
   .card h3{
-    color:var(--green-dark);
-    margin-bottom:10px;
-    font-size:1.1rem;
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    color:var(--forest-deep);
+    margin-bottom:12px;
+    font-size:1.2rem;
+    letter-spacing:0.3px;
   }
-  .card p{font-size:0.92rem;color:#666;}
+  .card p{font-size:0.87rem;color:var(--ink-soft);font-weight:300;line-height:1.65;}
+
   footer{
-    text-align:center;
-    padding:30px 20px 50px;
-    font-size:0.85rem;
-    color:#999;
+    border-top:1px solid var(--line);
   }
-  footer a{color:var(--green-dark);text-decoration:none;}
+  footer .inner{
+    max-width:1180px;
+    margin:0 auto;
+    padding:32px 48px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  footer .inner span{
+    font-size:0.78rem;
+    color:var(--ink-soft);
+    letter-spacing:0.5px;
+  }
+  footer a{color:var(--forest);text-decoration:none;border-bottom:1px solid var(--line);}
+  footer a:hover{border-color:var(--forest);}
+
+  @media (max-width: 860px){
+    section.categories{grid-template-columns:repeat(2, 1fr);}
+    header.hero h1{font-size:2.5rem;}
+  }
+  @media (max-width: 520px){
+    nav{padding:22px 24px;}
+    header.hero{padding:48px 20px 40px;}
+    section.categories{grid-template-columns:1fr;padding:16px 20px 70px;}
+    form.signup{flex-direction:column;border-bottom:none;gap:10px;}
+    form.signup input[type="email"]{border:1px solid var(--line);border-radius:2px;padding:14px 16px;}
+    form.signup button{border:1px solid var(--forest);border-radius:2px;padding:13px;}
+    footer .inner{flex-direction:column;text-align:center;}
+  }
 </style>
 </head>
 <body>
 
-<header>
-  <div class="logo">Juicer <span>Babe</span></div>
-  <div class="tagline">Organic &middot; Kosher &middot; Eco-Friendly &middot; Merch</div>
-</header>
+<nav>
+  <div class="mark">Juicer <em>Babe</em></div>
+  <div class="status">Opening Soon</div>
+</nav>
 
-<div class="hero">
-  <h1>Clean living, curated for you.</h1>
-  <p>Juicer Babe is opening soon — a shop built around organic and kosher food, eco-friendly everyday products, and merch made for people who care what goes in and around their lives. Be first to know when we launch.</p>
+<header class="hero">
+  <div class="eyebrow">Los Angeles, California</div>
+  <h1>Clean living,<br><span class="accent">quietly curated.</span></h1>
+  <p class="lede">Organic and kosher pantry staples, safe everyday goods, and original merch — chosen with the same care you'd want if you were choosing it yourself.</p>
 
-  <div class="badges">
-    <span class="badge">Certified Organic Picks</span>
-    <span class="badge">Certified Kosher Picks</span>
-    <span class="badge">Eco-Safe Products</span>
-    <span class="badge">Original Merch</span>
+  <div class="rule"></div>
+
+  <div class="pillars">
+    <span class="pillar">Certified Organic</span>
+    <span class="pillar">Certified Kosher</span>
+    <span class="pillar">Eco-Conscious</span>
+    <span class="pillar">Original Merch</span>
   </div>
 
   <form class="signup" onsubmit="return handleSignup(event)">
-    <input type="email" id="emailInput" placeholder="you@email.com" required>
+    <input type="email" id="emailInput" placeholder="Your email address" required>
     <button type="submit">Notify Me</button>
   </form>
-  <p class="fine-print" id="formNote">Get 10% off your first order when we launch. No spam, just clean living.</p>
-</div>
-
-<div class="divider"></div>
+  <p class="fine-print" id="formNote">10% off your first order at launch — no spam, ever.</p>
+</header>
 
 <section class="categories">
   <div class="card">
-    <div class="icon">🥑</div>
+    <div class="icon">
+      <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+        <path d="M20 33c0-11 4-19 12-24 1 10-2 19-12 24Z"/>
+        <path d="M20 33c0-11-4-19-12-24-1 10 2 19 12 24Z"/>
+        <path d="M20 33V17"/>
+      </svg>
+    </div>
     <h3>Organic Pantry</h3>
-    <p>Shelf-stable, certified organic staples sourced straight from the label — no guesswork, no additives.</p>
+    <p>Shelf-stable staples carrying their own certified organic seal — sold exactly as labeled.</p>
   </div>
   <div class="card">
-    <div class="icon">✡️</div>
+    <div class="icon">
+      <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+        <circle cx="20" cy="20" r="14"/>
+        <path d="M13 20.5l4.5 4.5L28 14.5"/>
+      </svg>
+    </div>
     <h3>Certified Kosher</h3>
-    <p>Trusted kosher-certified products, clearly marked with the certification you can see on the packaging.</p>
+    <p>Trusted kosher certifications, shown exactly as they appear on the manufacturer's packaging.</p>
   </div>
   <div class="card">
-    <div class="icon">🌿</div>
+    <div class="icon">
+      <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+        <path d="M20 6c7 5 12 11 12 18a12 12 0 0 1-24 0c0-7 5-13 12-18Z"/>
+        <path d="M20 16v14"/>
+      </svg>
+    </div>
     <h3>Eco-Friendly Living</h3>
-    <p>Safe, sustainable swaps for everyday items — better for your home, better for the planet.</p>
+    <p>Considered, sustainable alternatives for the everyday — better for your home and beyond it.</p>
   </div>
   <div class="card">
-    <div class="icon">👕</div>
+    <div class="icon">
+      <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+        <path d="M16 8h8l2 4h5v5l-3 2 3 13H9l3-13-3-2v-5h5l2-4Z"/>
+        <path d="M16 8a4 4 0 0 0 8 0"/>
+      </svg>
+    </div>
     <h3>Juicer Babe Merch</h3>
     <p>Original apparel and accessories for the clean-living community. New drops coming soon.</p>
   </div>
 </section>
 
 <footer>
-  Los Angeles, CA &nbsp;|&nbsp; &copy; 2026 Juicer Babe &nbsp;|&nbsp; <a href="mailto:juicerbabe@icloud.com">juicerbabe@icloud.com</a>
+  <div class="inner">
+    <span>&copy; 2026 Juicer Babe, Los Angeles CA</span>
+    <span><a href="mailto:juicerbabe@icloud.com">juicerbabe@icloud.com</a></span>
+  </div>
 </footer>
 
 <script>
@@ -199,9 +315,8 @@
     e.preventDefault();
     const email = document.getElementById('emailInput').value;
     const note = document.getElementById('formNote');
-    note.textContent = "You're on the list, " + email + " — we'll email you the second we launch.";
-    note.style.color = '#2e5e3b';
-    note.style.fontWeight = '600';
+    note.textContent = "You're on the list — we'll write the moment we launch.";
+    note.style.color = '#1f3a2a';
     document.getElementById('emailInput').value = '';
     return false;
   }
